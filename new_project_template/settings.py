@@ -1,0 +1,1 @@
+from tinytracker.settings import *
