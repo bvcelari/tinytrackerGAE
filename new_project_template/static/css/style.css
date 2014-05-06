@@ -1,0 +1,54 @@
+/*reset*/
+/*
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,b, u, i, center, dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: '';content: none;}
+table {border-collapse: collapse;border-spacing: 0;}
+*/
+
+/*Aqui van los estilos de los elementos*/
+body{font-family:sans-serif;}
+
+h1 { font-size: 2rem;    margin: 0 0 0.67em 0; font-weight: bold; }
+h2 { font-size: 1.5rem;  margin: 0 0 0.83em 0; font-weight: bold; }
+h3 { font-size: 1.17rem; margin: 0 0 0.1em  0; font-weight: bold; }
+h4 { font-size: 1rem;    margin: 0 0 1.33em 0; font-weight: bold; }
+h5 { font-size: .83rem;  margin: 0 0 1.67em 0; font-weight: bold; }
+h6 { font-size: .67rem;  margin: 0 0 2.33em 0; font-weight: bold; }
+
+a:link, a:visited{color: #00C; text-decoration:none;}
+a:hover,a:focus {background: #FFA;color: #00C; text-decoration:underline; }
+a:active,a.active {color: #C00;text-decoration:underline;}
+
+:focus{outline:3px ridge #C00;}/*para poder navegar con el teclado en moviles -o desktop-*/
+
+th{font-weight:bold}
+tr{background:#efefef}
+tr:nth-child(odd) {
+  background:#ccc;
+}
+thead tr,thead tr:nth-child(odd){border-bottom:1px solid #000;background:#eee}
+th, td {padding:0.4em;}
+
+/*Aqui va el layout para movil (el 90% de todo el layout)*/
+.header-wrapper{width:100%;overflow:hidden;margin-bottom:1em;}
+.content-wrapper{width:100%;margin-bottom:1em;}
+
+#heading{display:block;width:100%;}
+#user-menu{display:block;width:100%;}
+#top-menu{display:block;clear:both;width:100%;}
+#sidebar-left{display:block;width:100%;}
+#main{display:block;width:100%;}
+
+.content {padding:1em;}
+#heading-inner{padding-bottom:0;}
+
+/*esto es para hacer las cosas mas facil mientras se maqueta*/
+*[id]{border:1px solid #ccc;position:relative;}
+*[id]:before{content:attr(id);background:#000;color:#fff;font-size:0.6em;position:absolute;top:0;left:0;}

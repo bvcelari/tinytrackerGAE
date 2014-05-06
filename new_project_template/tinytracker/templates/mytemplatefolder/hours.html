@@ -1,15 +1,55 @@
-<html>
+{%extends "mytemplatefolder/base.html"%}
 
-<div id="header">
-<div>
+{% block title %} Hours Tracker {% endblock %}
+{% block myscripts %}
 
-<div id="sidebar">
-<div>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<style>
+.ui-datepicker {font-size:64%; }
+</style>
 
-<div id="content">
-<div>
 
-<div id="footer">
-<div>
+<script>
+$(function() {
+	$( "#datepicker" ).datepicker({
+		//TODO: miss force click on "today" to show current hours
+		showOn: "button",
+		buttonImage: "/static/img/calendar.gif",
+		buttonImageOnly: true,
+	        defaultDate: $.datepicker.parseDate("y-m-d", $('#datepicker').val()),
+		onSelect: function(dateText, inst)
+		            {
+		                $('#datepicker').val($.datepicker.formatDate("yy-mm-dd", $('#datepicker').datepicker('getDate')));
+		
+		                // Ajax for populating days when selected
+		                $.post(
+		                    "http://127.0.0.1:8000/userhours/",
+		                        {
+		                        date_val: $('#datepicker').val(),
+					//is there a better way to handle user owner?
+		                        //user_id: $('#user_id').val()
+		                        },
+		                    function(data)
+		                    {
+		                        //return function
+		                        $('#content').html(data.resultTable);
+		                    },
+		                    "json"
+				);
+			    }   
+		            
+	
+	});
+});
 
-</html>
+</script>
+{% endblock %}
+{%block sidebar%}
+<p>Date: <input type="text" id="datepicker"></p>
+{% endblock %}
+
+{%block content%}
+
+{% endblock %}

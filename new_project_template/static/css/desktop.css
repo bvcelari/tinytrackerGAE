@@ -1,0 +1,14 @@
+/*Aqui van los estilos de los elementos que en desktop varian respecto al movil*/
+
+/*Aqui va el layout para desktop*/
+
+#heading{display:inline-block;float:left;width:auto;}
+#user-menu{display:inline-block;float:right;width:auto;}
+.content-wrapper{position:relative;}
+.content-content{display:table;table-layout:fixed;width:100%;}
+	#sidebar-left{width:16em;display:table-cell;vertical-align:top;}
+		#sidebar-left-inner{}
+	#main{display:table-cell;vertical-align:top;}
+		#main-inner{}
+
+

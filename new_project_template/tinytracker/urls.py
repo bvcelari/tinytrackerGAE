@@ -7,6 +7,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'tinytracker.views.home', name='home'),
+    url(r'^userhours/$', 'tinytracker.views.userhours', name='userhours'),
     # url(r'^tinytracker/', include('tinytracker.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
